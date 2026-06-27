@@ -17,12 +17,16 @@
     --border:#E0E0E0;
 }
 
+*{
+    box-sizing:border-box;
+}
+
 body{
     margin:0;
     font-family:Roboto, Arial, sans-serif;
     background:var(--bg);
     color:var(--text);
-    padding:24px;
+    padding:16px;
 }
 
 .container{
@@ -32,31 +36,40 @@ body{
 
 h1{
     font-weight:500;
-    margin-bottom:20px;
+    margin-bottom:16px;
+    font-size:1.4rem;
 }
 
 h2{
     color:var(--primary);
     font-weight:500;
     margin-top:0;
+    font-size:1.2rem;
 }
 
 .grid{
     display:grid;
     grid-template-columns:2fr 1fr;
-    gap:20px;
+    gap:16px;
 }
 
 .card{
     background:var(--surface);
     border-radius:12px;
-    padding:20px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.12);
+    padding:16px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.10);
+    overflow:hidden;
+}
+
+/* TABLE WRAPPER */
+.table-wrapper{
+    overflow-x:auto;
 }
 
 table{
     width:100%;
     border-collapse:collapse;
+    min-width:600px;
 }
 
 th{
@@ -64,54 +77,67 @@ th{
     color:white;
     text-align:left;
     padding:10px;
+    font-size:0.9rem;
 }
 
 td{
     border-bottom:1px solid var(--border);
     padding:10px;
     vertical-align:top;
+    font-size:0.9rem;
 }
 
 tr:nth-child(even){
     background:#fafafa;
 }
 
-h3{
-    margin-top:18px;
-    color:var(--primary);
-    border-bottom:2px solid #E8F5E9;
-    padding-bottom:4px;
-}
-
+/* CHECKBOXES */
 label{
-    display:block;
+    display:flex;
+    align-items:center;
+    gap:8px;
     margin:6px 0;
-    cursor:pointer;
+    font-size:0.95rem;
 }
 
 input[type="checkbox"]{
     transform:scale(1.2);
-    margin-right:8px;
 }
 
+/* HEADERS */
+h3{
+    margin-top:16px;
+    color:var(--primary);
+    border-bottom:2px solid #E8F5E9;
+    padding-bottom:4px;
+    font-size:1rem;
+}
+
+/* FOOTER */
 .footer{
     text-align:center;
-    margin-top:20px;
+    margin-top:16px;
     color:var(--muted);
-    font-size:0.9em;
+    font-size:0.8rem;
 }
 
-@media print{
+/* 📱 MOBILE */
+@media (max-width: 768px){
+
     body{
-        background:white;
-        padding:0;
+        padding:10px;
     }
-    .card{
-        box-shadow:none;
-        border:1px solid #ddd;
-    }
+
     .grid{
         grid-template-columns:1fr;
+    }
+
+    h1{
+        font-size:1.2rem;
+    }
+
+    .card{
+        padding:12px;
     }
 }
 </style>
@@ -130,6 +156,7 @@ input[type="checkbox"]{
 
 <h2>Plano Semanal</h2>
 
+<div class="table-wrapper">
 <table>
 <tr>
 <th>Dia</th>
@@ -180,6 +207,7 @@ input[type="checkbox"]{
 </tr>
 
 </table>
+</div>
 
 </div>
 
@@ -239,7 +267,6 @@ Plano de refeições semanal • 27/06 – 03/07
 // persistência das checkboxes
 const checkboxes = document.querySelectorAll('.check-item');
 
-// carregar estado
 window.addEventListener('load', () => {
     checkboxes.forEach((box, index) => {
         const saved = localStorage.getItem('item-' + index);
@@ -247,7 +274,6 @@ window.addEventListener('load', () => {
     });
 });
 
-// guardar estado
 checkboxes.forEach((box, index) => {
     box.addEventListener('change', () => {
         localStorage.setItem('item-' + index, box.checked);
