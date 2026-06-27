@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Refeições 27/06 – 03/07</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --primary:#2E7D32;
+    --bg:#F5F5F5;
+    --surface:#FFFFFF;
+    --text:#212121;
+    --muted:#616161;
+    --border:#E0E0E0;
+}
+
+body{
+    margin:0;
+    font-family:Roboto, Arial, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    padding:24px;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+}
+
+h1{
+    font-weight:500;
+    margin-bottom:20px;
+}
+
+h2{
+    color:var(--primary);
+    font-weight:500;
+    margin-top:0;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:20px;
+}
+
+.card{
+    background:var(--surface);
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.12);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:var(--primary);
+    color:white;
+    text-align:left;
+    padding:10px;
+}
+
+td{
+    border-bottom:1px solid var(--border);
+    padding:10px;
+    vertical-align:top;
+}
+
+tr:nth-child(even){
+    background:#fafafa;
+}
+
+h3{
+    margin-top:18px;
+    color:var(--primary);
+    border-bottom:2px solid #E8F5E9;
+    padding-bottom:4px;
+}
+
+label{
+    display:block;
+    margin:6px 0;
+    cursor:pointer;
+}
+
+input[type="checkbox"]{
+    transform:scale(1.2);
+    margin-right:8px;
+}
+
+.footer{
+    text-align:center;
+    margin-top:20px;
+    color:var(--muted);
+    font-size:0.9em;
+}
+
+@media print{
+    body{
+        background:white;
+        padding:0;
+    }
+    .card{
+        box-shadow:none;
+        border:1px solid #ddd;
+    }
+    .grid{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🍽️ Plano de Refeições (27/06 – 03/07)</h1>
+
+<div class="grid">
+
+<!-- PLANO -->
+<div class="card">
+
+<h2>Plano Semanal</h2>
+
+<table>
+<tr>
+<th>Dia</th>
+<th>Almoço</th>
+<th>Jantar</th>
+</tr>
+
+<tr>
+<td><strong>Segunda-feira</strong></td>
+<td>Alface, tomate, milho, salsichas grelhadas, massa</td>
+<td>Sopa + salada + omelete<br><em>Emma: restos de massa</em></td>
+</tr>
+
+<tr>
+<td><strong>Terça-feira</strong></td>
+<td>Trabalho</td>
+<td>Sopa + legumes salteados + fiambre/frango<br><em>Emma: restos de massa</em></td>
+</tr>
+
+<tr>
+<td><strong>Quarta-feira</strong></td>
+<td>Fajitas com atum, abacate, tomate, milho e alface</td>
+<td>Sopa + salada + hambúrguer grelhado<br><em>Emma: arroz com cenoura</em></td>
+</tr>
+
+<tr>
+<td><strong>Quinta-feira</strong></td>
+<td>Salada de arroz com tomate, milho, pepino, azeitonas e ovos</td>
+<td>Sopa + ervilhas e cenouras + peixe panado<br><em>Emma: restos de arroz</em></td>
+</tr>
+
+<tr>
+<td><strong>Sexta-feira</strong></td>
+<td>Salada de batata com bacon, tomate, milho, azeitonas e ovos</td>
+<td>Sopa + alface, tomate e milho + peru grelhado<br><em>Emma: massa</em></td>
+</tr>
+
+<tr>
+<td><strong>Sábado</strong></td>
+<td>Alface, tomate, salmão e batatas no forno</td>
+<td>Sopa + salada + carne grelhada (churrasco)<br><em>Emma: salmão + batatas</em></td>
+</tr>
+
+<tr>
+<td><strong>Domingo</strong></td>
+<td>Alface, tomate, milho, azeitonas, cenoura + carne grelhada + batatas fritas</td>
+<td>Sopa + legumes salteados + restos de carne<br><em>Emma: massa</em></td>
+</tr>
+
+</table>
+
+</div>
+
+<!-- LISTA DE COMPRAS -->
+<div class="card">
+
+<h2>🛒 Lista de Compras</h2>
+
+<h3>🥬 Legumes</h3>
+<label><input type="checkbox" class="check-item">3 alfaces</label>
+<label><input type="checkbox" class="check-item">14–16 tomates</label>
+<label><input type="checkbox" class="check-item">1 pepino</label>
+<label><input type="checkbox" class="check-item">1 kg cenouras</label>
+<label><input type="checkbox" class="check-item">500 g ervilhas</label>
+<label><input type="checkbox" class="check-item">2 cebolas</label>
+<label><input type="checkbox" class="check-item">legumes para saltear</label>
+
+<h3>🥔 Hidratos</h3>
+<label><input type="checkbox" class="check-item">2 kg batatas</label>
+<label><input type="checkbox" class="check-item">500 g massa</label>
+<label><input type="checkbox" class="check-item">500 g arroz</label>
+<label><input type="checkbox" class="check-item">6 tortilhas</label>
+
+<h3>🥑 Fruta</h3>
+<label><input type="checkbox" class="check-item">1 abacate</label>
+
+<h3>🥫 Conservas</h3>
+<label><input type="checkbox" class="check-item">3 latas de milho</label>
+<label><input type="checkbox" class="check-item">2 frascos de azeitonas</label>
+<label><input type="checkbox" class="check-item">2 latas de atum</label>
+<label><input type="checkbox" class="check-item">patê de atum</label>
+
+<h3>🥚 Ovos</h3>
+<label><input type="checkbox" class="check-item">12 ovos</label>
+
+<h3>🥩 Carne e peixe</h3>
+<label><input type="checkbox" class="check-item">salsichas grelhadas</label>
+<label><input type="checkbox" class="check-item">fiambre / frango</label>
+<label><input type="checkbox" class="check-item">hambúrgueres</label>
+<label><input type="checkbox" class="check-item">peru</label>
+<label><input type="checkbox" class="check-item">salmão</label>
+<label><input type="checkbox" class="check-item">peixe panado</label>
+<label><input type="checkbox" class="check-item">carne para churrasco</label>
+<label><input type="checkbox" class="check-item">bacon</label>
+
+</div>
+
+</div>
+
+<div class="footer">
+Plano de refeições semanal • 27/06 – 03/07
+</div>
+
+</div>
+
+<script>
+// persistência das checkboxes
+const checkboxes = document.querySelectorAll('.check-item');
+
+// carregar estado
+window.addEventListener('load', () => {
+    checkboxes.forEach((box, index) => {
+        const saved = localStorage.getItem('item-' + index);
+        if (saved === 'true') box.checked = true;
+    });
+});
+
+// guardar estado
+checkboxes.forEach((box, index) => {
+    box.addEventListener('change', () => {
+        localStorage.setItem('item-' + index, box.checked);
+    });
+});
+</script>
+
+</body>
+</html>
